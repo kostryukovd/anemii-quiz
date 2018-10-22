@@ -21,7 +21,8 @@ body {
   background-color: #F9F9F9; }
 
 .page {
-  max-width: 1200px;
+  max-width: 1230px;
+  padding: 0 15px;
   margin: 0 auto; }
 
 .header {
@@ -29,6 +30,85 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100px; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+h2 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 28px;
+  color: #353535;
+  padding-bottom: 13px;
+  border-bottom: 2px dotted #AF4845;
+  margin-bottom: 35px; }
+  h2 img {
+    margin-right: 7px; }
+
+h3 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 24px;
+  color: #DF362F;
+  margin-bottom: 18px; }
+
+.content-block {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 50px;
+  padding-bottom: 83px;
+  background-color: white;
+  margin-bottom: 132px; }
+  .content-block p {
+    font-family: Ubuntu;
+    line-height: 25px;
+    font-size: 16px;
+    color: #353535;
+    margin-bottom: 19px; }
+  .content-block .content-wrapper {
+    max-width: 732px;
+    width: 100%;
+    margin-right: auto; }
+  .content-block .next-button {
+    font-family: Ubuntu;
+    display: block;
+    font-size: 16px;
+    color: #FFFFFF;
+    max-width: 145px;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background: #DF362F;
+    border-radius: 28px;
+    text-decoration: none;
+    padding-left: 48px;
+    padding-right: 48px; }
+
+.patient-profile-container {
+  float: left;
+  padding: 15px;
+  border: 1px solid #DFDFDF;
+  border-radius: 22px;
+  margin-right: 35px;
+  margin-bottom: 25px; }
+  .patient-profile-container p {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 10px;
+    color: #AF4845; }
+  .patient-profile-container .patient-photo {
+    padding-top: 5px;
+    background: #AF4845;
+    border-radius: 15px 15px 0px 0px;
+    text-align: center; }
 
 .header-logo {
   position: relative;
@@ -118,8 +198,8 @@ body {
     text-align: center;
     margin: 0; }
     .nav-links li a {
-      padding-top: 35px;
-      padding-bottom: 35px;
+      padding-top: 15px;
+      padding-bottom: 15px;
       display: block;
       text-decoration: none;
       font-family: ubuntu;
