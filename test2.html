@@ -131,12 +131,10 @@
                     Посмотреть
                 </div>
                 <div class = "help-links__item">
-                    <a class = "help-links__link" href = "anamnes.html">Анамнез болезни</a><span class = "radius-line"></span>
-                    <!--<img src = "img/branch.png">-->
+                    <a class = "help-links__link" href = "anamnes.html">Анамнез болезни</a><span class = "radius-line"></span><!--<img src = "img/branch.png">-->
                 </div>
                 <div class = "help-links__item">
-                    <a class = "help-links__link" href = "researchdata.html">Данные исследования</a><span class = "radius-line"></span>
-                    <!--<img src = "img/branch.png">-->
+                    <a class = "help-links__link" href = "researchdata.html">Данные исследования</a><span class = "radius-line"></span><!--<img src = "img/branch.png">-->
                 </div>
 
             </div>
@@ -150,7 +148,7 @@
 
                 <label>
                     <input type = "checkbox" name = "answer1">
-                    <div class = "checkbox">
+                    <div class = "checkbox ">
                 </div>
                 <p class = "answer-number">1.</p><p class = "answer-text">Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечнососудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии.</p>
                 </label>
@@ -160,7 +158,7 @@
 
                 <label>
                     <input type = "checkbox">
-                    <div class = "checkbox" name = "answer2">
+                    <div class = "checkbox green" name = "answer2">
                 </div>
                 <p class = "answer-number">2.</p><p class = "answer-text">Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечнососудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии.</p>
                 </label>
@@ -169,8 +167,8 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer3">
-                    <div class = "checkbox">
+                    <input type = "checkbox" name = "answer3" checked = "checked">
+                    <div class = "checkbox red">
                 </div>
                 <p class = "answer-number">3.</p><p class = "answer-text">Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечнососудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии.</p>
                 </label>
@@ -179,7 +177,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer4" >
+                    <input type = "checkbox" name = "answer4" disabled = "disabled">
                     <div class = "checkbox">
                 </div>
                 <p class = "answer-number">4.</p><p class = "answer-text">Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечнососудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии.</p>
@@ -187,12 +185,19 @@
 
             </div>
 
-            <!--<button type = "button" class = "submit-answers" onclick = "check_results()">Ответить</button>-->
-             <a class = "next-button" href = "test2.html">Ответить</a>
+            <button type = "button" class = "submit-answers" onclick = "check_results()" style = "display:none;">Ответить</button>
         </form>
             
+        <div class = "wrong-answer">
+                
+                <span class = "wrong-img"><img src = "img/wrong.svg"></span>
+                <span class = "wrong-txt">Вы ответили неправильно</span>
 
-            <!--<div class = "result-block clearfix">
+        </div>
+
+
+
+            <div class = "result-block clearfix">
                 <div class = "result-block__img">
                     <img src = "img/list.png">
                 </div>
@@ -200,16 +205,16 @@
                     <div class = "result-block__bordered">
                     <p class = "result-block__header">
                         <img src = "img/black_dot.png">
-                        ЗАКЛЮЧЕНИЕ
+                        ПРАВИЛЬНЫЙ ОТВЕТ
                     </p>
-                    <p>Выявлены признаки хронического пиелонефрита, уретрокаликопиелоэктазии обеих почек
-с гидронефротической трансформацией.</p>
+                    <p><strong>2.  Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечнососудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии.</strong></p>
+                    <p>У больной предполагается операция относящаяся к операциям высокого риска. Поскольку ситуация плановая, то понимание резервных возможностей функций жизненно-важных органов крайне необходимы. Поэтому предоперационная подготовка включает исследование функции дыхания (ФВД) и возможных анатомических изменений легких ( рентгенография, а лучше КТ легких). Исследование функции сердечно-сосудистой системы включает ЭКГ, ЭХО кардиография сердца. Не менее важно предоперационное исследование свертывающей системы, а также в обязательном порядке УЗИ сосудов нижних конечностей Признаки острой инфекции (у больной высока вероятность острой инфекции мочевыводящих путей), которая потребует дооперационного лечения, а также может повлиять на выбор антибиотикотерапии при возможном развитии послеоперационных инфекционных осложнений. Коррекция массы тела (нутритивная поддержка), дооперационная коррекция анемии требуется и входит во все современные протоколы по интраоперационному ведению больных. У данной больной необходима дооперационная коррекция гипокалиемии.</p>
                 </div>
-                 <a class = "next-button" href = "case1.html">Вопросы для самоконтроля</a>
+                 <a class = "next-button" href = "test3.html">Далее</a>
                 </div>
 
 
-            </div>-->
+            </div>
 
            
 

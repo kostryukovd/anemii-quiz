@@ -79,7 +79,7 @@ h3 {
     color: #353535; }
   .content-block .content-wrapper {
     max-width: 732px;
-    width: 100%;
+    width: 70%;
     margin-right: auto; }
   .content-block .next-button {
     font-family: Ubuntu;
@@ -132,21 +132,36 @@ h3 {
 
 .help-links-tree {
   float: right;
-  width: 25%; }
+  width: 30%;
+  max-width: 270px; }
   .help-links-tree .help-links__root {
     text-align: right;
     font-size: 16px;
     color: #353535; }
+  .help-links-tree .help-links__item {
+    box-shadow: inset -1px 0px 0 0 #DF362F;
+    padding-bottom: 7px; }
+  .help-links-tree .help-links__item:last-of-type {
+    box-shadow: inset 0px 0px 0 0 #DF362F; }
+  .help-links-tree .help-links__item:nth-of-type(2) {
+    padding-top: 30px; }
   .help-links-tree .help-links__link {
     display: inline-block;
     font-size: 14px;
-    width: 221px;
+    width: 90%;
     text-align: center;
     color: #DF362F;
     padding: 9px 0;
     border: 1px solid #DF362F;
     border-radius: 20px;
     text-decoration: none; }
+  .help-links-tree .radius-line {
+    display: inline-block;
+    border-bottom: 1px solid #DF362F;
+    border-right: 1px solid #DF362F;
+    width: 10%;
+    height: 27px;
+    border-bottom-right-radius: 50%; }
 
 .answer-block label {
   cursor: pointer;
@@ -154,6 +169,18 @@ h3 {
   .answer-block label input:checked ~ .checkbox {
     background: #838383;
     background-image: url("../img/check_white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; }
+  .answer-block label input:checked ~ .checkbox.green {
+    background: #fff;
+    background-image: url("../img/check_green.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; }
+  .answer-block label input:checked ~ .checkbox.red {
+    background: #fff;
+    background-image: url("../img/cross.svg");
     background-repeat: no-repeat;
     background-position: center center; }
   .answer-block label input {
@@ -168,12 +195,59 @@ h3 {
   transition: all 0.3s;
   margin-top: 5px; }
 
+.answer-block .checkbox.green {
+  border: 1px solid #1BC121; }
+
+.answer-block .checkbox.red {
+  border: 1px solid #DF362F; }
+
 .answer-block .answer-number {
   margin-right: 4px; }
 
 .answer-block .answer-text {
+  font-size: 14px; }
+
+.submit-answers {
   display: inline-block;
-  float: right; }
+  font-size: 16px;
+  margin-top: 40px;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background: #DF362F;
+  border-radius: 28px;
+  padding-left: 48px;
+  padding-right: 48px;
+  position: relative;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  margin-left: 40px; }
+
+.wrong-answer {
+  text-align: center;
+  margin: 40px 0; }
+
+.wrong-img {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background-color: #DF362F;
+  display: inline-block;
+  vertical-align: middle; }
+  .wrong-img img {
+    vertical-align: middle;
+    margin-top: 3px; }
+
+.right-img {
+  background-color: black; }
+
+.wrong-txt {
+  font-family: UbuntuBold;
+  line-height: 25px;
+  font-size: 16px;
+  color: #353535; }
 
 .patient-profile-container {
   float: left;
@@ -200,6 +274,47 @@ h3 {
   bottom: 0;
   right: 0;
   z-index: 0; }
+
+.test-result-block {
+  display: flex;
+  color: #353535;
+  height: 87px;
+  margin-bottom: 13px; }
+
+.result-block__left {
+  background-color: #AF4845;
+  border-radius: 43px 0 0 43px;
+  width: 22%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .result-block__left p {
+    margin: 0; }
+  .result-block__left .result-block__question {
+    font-family: UbuntuBold;
+    color: white;
+    line-height: 25px;
+    font-size: 16px; }
+  .result-block__left .result-block__percents {
+    line-height: 19px;
+    font-size: 12px;
+    color: #E3E3E3; }
+
+.result-block__right {
+  width: 78%;
+  display: flex;
+  align-items: center;
+  padding-left: 29px;
+  background-color: #F9F9F9;
+  border-radius: 0 43px 43px 0;
+  font-size: 14px; }
+  .result-block__right img {
+    vertical-align: middle; }
+  .result-block__right .type-of-result {
+    width: 60%; }
+  .result-block__right .right-answer {
+    width: 40%; }
 
 .header-logo {
   position: relative;
@@ -750,7 +865,21 @@ h3 {
   .header {
     border-bottom: 2px solid #DF362F; }
   .event-date {
-    margin-right: 20px; } }
+    margin-right: 20px; }
+  .content-block .result-block__bordered {
+    padding: 20px; }
+  .content-block .result-block__img {
+    margin-right: 5px; }
+  .result-block__right {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start; }
+  .test-result-block {
+    height: 120px; }
+  .result-block__right .type-of-result {
+    width: 100%; }
+  .result-block__right .right-answer {
+    width: 100%; } }
 
 @media screen and (max-width: 640px) {
   .contact-phone {
@@ -786,7 +915,19 @@ h3 {
     padding-top: 15px;
     padding-bottom: 15px; }
   .faq {
-    padding-bottom: 30px; } }
+    padding-bottom: 30px; }
+  .help-links-tree {
+    float: none;
+    width: 100%;
+    margin: 0 auto; }
+  .content-block .content-wrapper {
+    width: 100%; }
+  .patient-profile-container {
+    float: none;
+    max-width: 115px;
+    margin: 5px auto; }
+  .content-block .result-block__img {
+    width: 7%; } }
 
 @media screen and (max-width: 460px) {
   .banner-header {
@@ -802,7 +943,13 @@ h3 {
   .hidden-menu {
     width: 100%; }
   .event-img {
-    display: none; } }
+    display: none; }
+  .content-block .result-block__img {
+    border: none; }
+  .result-block__left, .result-block__right {
+    border-radius: 0; }
+  .result-block__left .result-block__question {
+    font-size: 13px; } }
 
 @media screen and (max-width: 380px) {
   .section-header {
