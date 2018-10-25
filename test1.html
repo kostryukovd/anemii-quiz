@@ -146,10 +146,10 @@
 
             <p class = "question-text">Какая подготовка к оперативному вмешательству требуется?</p>
             <form class = "quiz-form" >
-            <div class = "answer-block">
+            <div class = "answer-block" onclick = "answer1Clicked()">
 
                 <label>
-                    <input type = "checkbox" name = "answer1">
+                    <input type = "checkbox" name = "answer1" id = "input1">
                     <div class = "checkbox">
                 </div>
                 <p class = "answer-number">1.</p><p class = "answer-text">Нутритивная поддержка. Коррекция гипокалиемии</p>
@@ -159,7 +159,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox">
+                    <input type = "checkbox" id = "input2">
                     <div class = "checkbox" name = "answer2">
                 </div>
                 <p class = "answer-number">2.</p><p class = "answer-text">Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечно-сосудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии</p>
@@ -169,7 +169,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer3">
+                    <input type = "checkbox" name = "answer3" id = "input3">
                     <div class = "checkbox">
                 </div>
                 <p class = "answer-number">3.</p><p class = "answer-text">Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечно-сосудистой системы. Нутритивная поддержка. Исследование свертывающей системы</p>
@@ -179,7 +179,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer4" >
+                    <input type = "checkbox" name = "answer4" id = "input4" >
                     <div class = "checkbox">
                 </div>
                 <p class = "answer-number">4.</p><p class = "answer-text">Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. УЗИ сосудов нижних конечностей</p>
@@ -190,7 +190,7 @@
             <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer5" >
+                    <input type = "checkbox" name = "answer5" id = "input5">
                     <div class = "checkbox">
                 </div>
                 <p class = "answer-number">5.</p><p class = "answer-text">Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечно-сосудистой системы. Исследование свертывающей системы</p>
@@ -304,7 +304,20 @@
 <script src="js/main.js"></script>
 
 <script>
-    $(".submit-answers").disabled = false;
+    function answer1Clicked() {
+        console.log("answer 1 clicked");
+        if($('#input1').hasClass('clicked')) {
+            $('#input1').removeClass('clicked');
+        } else {
+            console.log("add class");
+            $("#input1").addClass("clicked");
+        }
+        $('#input2').prop('disabled',true);
+
+    }
+
+
+
 </script>
 
 </body>

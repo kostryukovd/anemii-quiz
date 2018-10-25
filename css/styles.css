@@ -538,6 +538,9 @@ h3 {
   padding-left: 15px;
   margin-bottom: 72px; }
 
+.clicked {
+  display: block; }
+
 .banner-header {
   font-family: UbuntuBold;
   color: #FFFFFF;
