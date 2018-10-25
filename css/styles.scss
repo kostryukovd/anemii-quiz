@@ -133,6 +133,10 @@ position:relative;
 z-index:1;
 }
 
+.next-button-orange {
+	background:#f98631;
+}
+
 
 .yellow-bkg-text {
 background-color:#FFC01F;
@@ -140,10 +144,11 @@ color:white;
 font-family:UbuntuBold;
 }
 
-.test-results {
+.medical-tests {
 	img {
 		width:100%;
 		height:auto;
+		margin-bottom:30px;
 	}
 }
 
@@ -169,21 +174,34 @@ font-family:UbuntuBold;
 	.result-block__header {
 		font-family: UbuntuBold;
 
-line-height: 28px;
-font-size: 18px;
-letter-spacing: 0.06em;
+		line-height: 28px;
+		font-size: 18px;
+		letter-spacing: 0.06em;
 
-color: #353535;
+		color: #353535;
 /*&:before {
 	content:url("../img/black_dot.png");
 	}*/
 
 		img {
 			vertical-align:middle;
+			}
+
+
 		}
 
-
-}
+		ul {
+			list-style:disc inside;
+			li {
+				line-height: 25px;
+		font-size: 14px;
+		margin-bottom:10px;
+			}
+		}
+		p {
+			font-size:14px;
+			line-height:25px;
+		}
 }
 
 }
@@ -480,6 +498,116 @@ text-align:center;
 }
 
 
+.message-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width:auto;
+  max-width: 500px;
+  margin: 20px auto;
+
+
+		h1 {
+			font-family:UbuntuBold;
+			font-size:20px;
+			margin-bottom:25px;
+		}
+
+		label {
+			display:block;
+			font-family:UbuntuBold;
+			font-size:15px;
+			margin-bottom:10px;
+
+		}
+
+		#your-message {
+			display:block;
+			resize:none;
+			width:100%;
+			margin:0 auto;
+			border-radius: 5px;
+			border:1px solid grey;
+			margin-bottom:10px;
+			min-height:170px;
+		}
+		input {
+			/*display:block;
+			width:100%;
+			border-radius:5px;
+			background-color: #DF362F;
+			color:white;
+			text-align:center;
+			padding-top:15px;
+			padding-bottom:15px;
+			border:none;*/
+			font-family: Ubuntu;
+display: inline-block;
+font-size: 16px;
+margin-top: 40px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 13px;
+padding-bottom: 13px;
+background: #DF362F;
+border-radius: 28px;
+text-decoration: none;
+border:none;
+width:100%;
+		}
+
+}
+
+.star-popup {
+	position: relative;
+  background: #FFF;
+  padding: 20px;
+  width:auto;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align:center;
+
+h1 {
+	margin-bottom:20px;
+}
+
+p {
+	margin-bottom:20px;
+}
+
+			input {
+
+			font-family: Ubuntu;
+display: inline-block;
+font-size: 16px;
+margin-top: 40px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 13px;
+padding-bottom: 13px;
+background: #DF362F;
+border-radius: 28px;
+text-decoration: none;
+border:none;
+width:100%;
+		}
+
+}
+
+.star {
+	width: 150px;
+    margin: 0 auto;
+    height: 30px;
+    cursor: pointer;
+    background: url(../img/star.png) 0 0 repeat-x;
+}
+
+.my {
+	background: url(../img/star-fill.png) 0 0 repeat-x;
+    width: 0;
+    height: 30px;
+}
+
 .header-logo
 {	
 	position:relative;
@@ -661,7 +789,7 @@ text-align:center;
 .banner-background
 {
 	background-color:#CE3D2C;
-	background-image:url("../img/banner.png");
+	background-image:url("../img/banner_new.png");
 	padding-top:59px;
 	padding-bottom:98px;
 	padding-left:15px;
@@ -1308,7 +1436,32 @@ padding-bottom:100px;
 
 }
 
+.test-table {
+	text-align:left;
+	margin:0 auto;
+	p {
+		margin:0;
+		font-size:14px;
+	}
+}
 
+/*.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:0px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-88nc{font-weight:bold;border-color:inherit;text-align:center}
+.tg .tg-kiyi{font-weight:bold;border-color:inherit;text-align:left}
+.tg .tg-hzsu{font-style:italic;border-color:#ffffff;text-align:left}
+.tg .tg-gweg{border-color:#c0c0c0;text-align:left}
+.tg .tg-g62i{border-color:#c0c0c0;text-align:center}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}*/
+
+.tg  {border-collapse:collapse;border-spacing:0;/*margin:0px auto;*/margin-bottom:19px;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0mb4{font-weight:bold;font-family:Ubuntu ;border-color:inherit;text-align:center;vertical-align:middle;}
+.tg .tg-uys7{border-color:inherit;text-align:center;vertical-align:middle;}
+.tg .tg-7zup{font-family:Ubuntu;border-color:inherit;text-align:center;vertical-align:middle;}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
 
 
 
