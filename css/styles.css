@@ -997,7 +997,7 @@ h3 {
   text-align: center;
   vertical-align: middle; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 900px) {
   .tg {
     width: auto !important; }
   .tg col {
@@ -1026,7 +1026,15 @@ h3 {
       width: 100%;
       height: auto; }
   .header-switch {
-    display: none; } }
+    display: none; }
+  .result-block__right {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start; }
+  .result-block__right .type-of-result {
+    width: 100%; }
+  .result-block__right .right-answer {
+    width: 100%; } }
 
 @media screen and (max-width: 786px) {
   .article-link {
@@ -1058,6 +1066,20 @@ h3 {
     width: 100%; }
   .result-block__right .right-answer {
     width: 100%; } }
+
+@media screen and (max-width: 652px) {
+  .content-block .content-wrapper {
+    width: 100%; }
+  .patient-profile-container {
+    float: none;
+    max-width: 115px;
+    margin: 5px auto; }
+  .content-block .result-block__img {
+    width: 7%; }
+  .help-links-tree {
+    float: none;
+    width: 100%;
+    margin: 0 auto; } }
 
 @media screen and (max-width: 640px) {
   .contact-phone {
@@ -1093,19 +1115,7 @@ h3 {
     padding-top: 15px;
     padding-bottom: 15px; }
   .faq {
-    padding-bottom: 30px; }
-  .help-links-tree {
-    float: none;
-    width: 100%;
-    margin: 0 auto; }
-  .content-block .content-wrapper {
-    width: 100%; }
-  .patient-profile-container {
-    float: none;
-    max-width: 115px;
-    margin: 5px auto; }
-  .content-block .result-block__img {
-    width: 7%; } }
+    padding-bottom: 30px; } }
 
 @media screen and (max-width: 460px) {
   .banner-header {
