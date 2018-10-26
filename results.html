@@ -329,28 +329,69 @@
     <label for = "your-message">Ваш Отзыв</label>
     <textarea id = "your-message">
     </textarea>
-    <input type = "submit" value = "Отправить">
+    <input type = "submit" value = "Отправить" id = "message_button" onclick = "message_close()">
   </form>
 </div>
 
 <div id = "star-popup" class = "star-popup mfp-hide">
     <h1>Понравился модуль?</h1>
+    <form>
     <p>Кликните на звездочки, чтобы оценить приложение</p>
     <div class = "star">
         <div class = "my">
         </div>
     </div>
-    <input type = "submit" value = "Отправить">
+    <input type = "submit" value = "Отправить" onclick="rating_done()" id = "rating_button">
+</form>
 </div>
 
 
-
 <script src="js/libs/jquery-3.3.1.min.js"></script>
+
+
+<script>
+
+document.getElementById("rating_button").addEventListener("click", function(event){
+    event.preventDefault()
+});
+
+document.getElementById("message_button").addEventListener("click", function(event){
+    event.preventDefault()
+});
+
+var rating_sent = false;
+function rating_done(){
+    console.log('rating_done');
+    rating_sent = true;
+        $.magnificPopup.close({
+  items: {
+    src: '#star-popup', // can be a HTML string, jQuery object, or CSS selector
+    type: 'inline'
+  }
+});
+}
+
+function message_close() {
+        $.magnificPopup.close({
+  items: {
+    src: '#message-popup', // can be a HTML string, jQuery object, or CSS selector
+    type: 'inline'
+  }
+});
+
+
+}
+
+</script>
+
+
 <script src="js/main.js"></script>
 <script src = "js/libs/jquery.magnific-popup.min.js"></script>
 <script src = "js/result_popups.js"></script>
 
 <script>
+
+
 
 function getCookie(cname) {
     var name = cname + "=";

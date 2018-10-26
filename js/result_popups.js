@@ -45,16 +45,18 @@ function rate() {
 
 
 function open_star_popup() {
+if(!rating_sent){
+
 	$.magnificPopup.open({
   items: {
     src: '#star-popup', // can be a HTML string, jQuery object, or CSS selector
     type: 'inline'
   }
 });
-	rate();
+	rate();}
 }
 
-setTimeout(open_star_popup,1000);
+setTimeout(open_star_popup,3000);
 
 
 $('.open-popup-link').magnificPopup({
