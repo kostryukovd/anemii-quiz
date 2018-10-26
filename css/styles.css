@@ -109,6 +109,8 @@ h3 {
     margin-bottom: 30px; }
   .content-block .result-block {
     display: none; }
+  .content-block .rb__not-hidden {
+    display: block; }
   .content-block .result-block__img {
     float: left;
     border-right: 2px dotted #AF4845;
