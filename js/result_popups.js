@@ -34,9 +34,10 @@ function rate() {
         $(this).addClass('selected');
         var my = $('.my', this).data('value');
         $('.my', this).data('select', my);
-        /*var form=$(this).closest('form')
-        form.find('[name="mark"]').val( my );
-        form.find('[type="submit"]').removeAttr('disabled');*/
+        var form=$(this).closest('form')
+        //form.find('[name="mark"]').val( my );
+        form.find('[type="submit"]').removeAttr('disabled');
+        form.find('[type="submit"]').removeClass('button-disabled');
     });
 }
 

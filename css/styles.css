@@ -107,6 +107,11 @@ h3 {
     width: 100%;
     height: auto;
     margin-bottom: 30px; }
+  .content-block .question-table img {
+    width: 100%;
+    height: auto;
+    max-width: 527px;
+    margin-bottom: 30px; }
   .content-block .result-block {
     display: none; }
   .content-block .rb__not-hidden {
@@ -422,6 +427,9 @@ h3 {
 
 #wrong-answer, #right-answer, #wrong-right-answer {
   display: none; }
+
+.button-disabled {
+  opacity: 0.5; }
 
 .header-logo {
   position: relative;
