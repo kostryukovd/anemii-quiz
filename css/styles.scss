@@ -152,6 +152,10 @@ font-family:UbuntuBold;
 	}
 }
 
+.result-block {
+	display:none;
+}
+
 .result-block__img {
 	float:left;
 	border-right:2px dotted #AF4845;
@@ -608,6 +612,11 @@ width:100%;
     height: 30px;
 }
 
+#wrong-answer,#right-answer,#wrong-right-answer {
+	display:none;
+}
+
+
 .header-logo
 {	
 	position:relative;
@@ -797,9 +806,7 @@ width:100%;
 
 }
 
-.clicked {
-	display:block;
-}
+
 
 .banner-header
 {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 
     <meta charset="utf-8">
@@ -15,6 +15,8 @@
 
 
 <body>
+
+<? echo "test" ?>
 
 <div class="page">
 
@@ -146,21 +148,22 @@
 
             <p class = "question-text">Какая подготовка к оперативному вмешательству требуется?</p>
             <form class = "quiz-form" >
-            <div class = "answer-block" onclick = "answer1Clicked()">
+            <div class = "answer-block"  >
 
-                <label>
-                    <input type = "checkbox" name = "answer1" id = "input1">
-                    <div class = "checkbox">
+                <label >
+                    <input type = "checkbox"  id = "input1" >
+                    <div class = "checkbox" id = "checkbox1">
                 </div>
                 <p class = "answer-number">1.</p><p class = "answer-text">Нутритивная поддержка. Коррекция гипокалиемии</p>
                 </label>
+ 
 
             </div>
-                       <div class = "answer-block">
+            <div class = "answer-block" >
 
                 <label>
                     <input type = "checkbox" id = "input2">
-                    <div class = "checkbox" name = "answer2">
+                    <div class = "checkbox" id = "checkbox2">
                 </div>
                 <p class = "answer-number">2.</p><p class = "answer-text">Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечно-сосудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии</p>
                 </label>
@@ -169,8 +172,8 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer3" id = "input3">
-                    <div class = "checkbox">
+                    <input type = "checkbox"  id = "input3">
+                    <div class = "checkbox" id = "checkbox3">
                 </div>
                 <p class = "answer-number">3.</p><p class = "answer-text">Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечно-сосудистой системы. Нутритивная поддержка. Исследование свертывающей системы</p>
                 </label>
@@ -179,8 +182,8 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer4" id = "input4" >
-                    <div class = "checkbox">
+                    <input type = "checkbox"  id = "input4" >
+                    <div class = "checkbox" id = "checkbox4">
                 </div>
                 <p class = "answer-number">4.</p><p class = "answer-text">Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. УЗИ сосудов нижних конечностей</p>
                 </label>
@@ -190,8 +193,8 @@
             <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer5" id = "input5">
-                    <div class = "checkbox">
+                    <input type = "checkbox"  id = "input5">
+                    <div class = "checkbox" id = "checkbox5">
                 </div>
                 <p class = "answer-number">5.</p><p class = "answer-text">Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечно-сосудистой системы. Исследование свертывающей системы</p>
                 </label>
@@ -203,10 +206,28 @@
         </form>
             
 
-        <div class = "wrong-answer">
+        <div class = "wrong-answer" id = "wrong-answer">
                 
                 <span class = "wrong-img"><img src = "img/wrong.svg"></span>
                 <span class = "wrong-txt">Вы ответили неправильно</span>
+
+        </div>
+
+        <div class = "wrong-answer" id = "right-answer">
+                
+                <span class = "wrong-img right-img"><img src = "img/plus.svg"></span>
+                <span class = "wrong-txt">Вы ответили правильно</span>
+
+        </div>
+
+        <div class = "wrong-answer" id = "wrong-right-answer">
+                
+
+                <span class = "wrong-img right-img"><img src = "img/plus.svg"></span>
+
+                  <span class = "wrong-img"><img src = "img/wrong.svg"></span>
+
+                <span class = "wrong-txt">Вы ответили частично правильно</span>
 
         </div>
 
@@ -223,6 +244,7 @@
                     <p><strong>2.  Исключение острой инфекции. Исследование функциональной способности системы дыхания. Исследование функциональной способности сердечнососудистой системы. Нутритивная поддержка. Исследование свертывающей системы. УЗИ сосудов нижних конечностей. Коррекция анемии. Коррекция гипокалиемии.</strong></p>
                     <p>У больной предполагается операция относящаяся к операциям высокого риска. Поскольку ситуация плановая, то понимание резервных возможностей функций жизненно-важных органов крайне необходимы. Поэтому предоперационная подготовка включает исследование функции дыхания (ФВД) и возможных анатомических изменений легких ( рентгенография, а лучше КТ легких). Исследование функции сердечно-сосудистой системы включает ЭКГ, эхокардиографию.</p><p>Не менее важно предоперационное исследование свертывающей системы, а также в обязательном порядке УЗИ сосудов нижних конечностей.</p><p> Признаки острой инфекции (у больной высока вероятность острой инфекции мочевыводящих путей), которая потребует дооперационного лечения, а также может повлиять на выбор антибиотикотерапии при возможном развитии послеоперационных инфекционных осложнений.</p><p> Коррекция массы тела (нутритивная поддержка), дооперационная коррекция анемии требуется и входит во все современные протоколы по интраоперационному ведению больных.</p><p> У данной больной необходима дооперационная коррекция гипокалиемии.</p>
                 </div>
+
                  <a class = "next-button" href = "test2.html">Далее</a>
                 </div>
 
@@ -304,23 +326,77 @@
 <script src="js/main.js"></script>
 
 <script>
+
+    var right_answer = 2;
+    var chosen_answers;
+    var wrong = false;
+    var right = false;
+    var wrong_right = false;
+    var question_number = "1_";
+    
+
     function answer1Clicked() {
+
         console.log("answer 1 clicked");
+        console.log('2 times?');
+
         if($('#input1').hasClass('clicked')) {
             $('#input1').removeClass('clicked');
         } else {
             console.log("add class");
             $("#input1").addClass("clicked");
         }
+
         $('#input2').prop('disabled',true);
 
     }
+
+function check_results() {
+    $('.submit-answers').css('display','none');
+    var i = 1;
+    $('.answer-block').each(function(){
+        console.log(i);
+        $("#input" + i).prop('disabled', true);
+        if (i == right_answer) {
+            $('#checkbox' + i).addClass('green');
+        }
+        if($('#input' + i).prop("checked")) {
+            console.log('checked');
+            document.cookie = question_number + i + "=1;"
+            if (i == right_answer) {
+                $('#checkbox' + i).addClass('green');
+                right = true;
+                
+            } else {
+                $('#checkbox' + i).addClass('red');
+                wrong = true;
+            }
+        } else {document.cookie = question_number + i + "=0;"}
+
+        i++;
+    });
+    if(right&wrong) {wrong_right = true}
+    if(!wrong_right) {
+        if(right) {
+            $('#right-answer').css('display','block');
+        } else {$('#wrong-answer').css('display','block');}
+    } else {
+        $('#wrong-right-answer').css('display','block');
+    }
+
+
+    $('.result-block').css('display','block');
+    $("input").prop('disabled', true);
+    console.log(document.cookie);
+}
 
 
 
 </script>
 
 </body>
+
+</html>
 
 
 

@@ -147,8 +147,8 @@
             <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer1">
-                    <div class = "checkbox ">
+                    <input type = "checkbox" id = "input1">
+                    <div class = "checkbox" id = "checkbox1">
                 </div>
                 <p class = "answer-number">1.</p><p class = "answer-text">Гемотрансфузия</p>
                 </label>
@@ -157,8 +157,8 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox">
-                    <div class = "checkbox" name = "answer2">
+                    <input type = "checkbox" id = "input2">
+                    <div class = "checkbox" id = "checkbox2">
                 </div>
                 <p class = "answer-number">2.</p><p class = "answer-text">Внутривенные препараты железа</p>
                 </label>
@@ -167,8 +167,8 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer3" checked = "checked">
-                    <div class = "checkbox green">
+                    <input type = "checkbox" id = "input3">
+                    <div class = "checkbox" id = "checkbox3">
                 </div>
                 <p class = "answer-number">3.</p>
                 <p class = "answer-text">Эритропоэзстимулирующие препараты</p>
@@ -178,8 +178,8 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer4" disabled = "disabled">
-                    <div class = "checkbox">
+                    <input type = "checkbox" id = "input4">
+                    <div class = "checkbox" id = "checkbox4">
                 </div>
                 <p class = "answer-number">4.</p><p class = "answer-text">Комбинированная терапия (препараты железа и эритропоэзстимулирующие препараты)</p>
                 </label>
@@ -189,8 +189,8 @@
                                    <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" name = "answer5" disabled = "disabled">
-                    <div class = "checkbox">
+                    <input type = "checkbox" id = "input5">
+                    <div class = "checkbox" id = "checkbox5">
                 </div>
                 <p class = "answer-number">5.</p><p class = "answer-text">Коррекция дефицита железа нутритивной поддержкой</p>
                 </label>
@@ -200,10 +200,28 @@
             <button type = "button" class = "submit-answers" onclick = "check_results()" >Ответить</button>
         </form>
             
-        <div class = "wrong-answer">
+        <div class = "wrong-answer" id = "wrong-answer">
+                
+                <span class = "wrong-img"><img src = "img/wrong.svg"></span>
+                <span class = "wrong-txt">Вы ответили неправильно</span>
+
+        </div>
+
+        <div class = "wrong-answer" id = "right-answer">
                 
                 <span class = "wrong-img right-img"><img src = "img/plus.svg"></span>
                 <span class = "wrong-txt">Вы ответили правильно</span>
+
+        </div>
+
+        <div class = "wrong-answer" id = "wrong-right-answer">
+                
+
+                <span class = "wrong-img right-img"><img src = "img/plus.svg"></span>
+
+                  <span class = "wrong-img"><img src = "img/wrong.svg"></span>
+
+                <span class = "wrong-txt">Вы ответили частично правильно</span>
 
         </div>
 
@@ -290,7 +308,52 @@
 <script src="js/main.js"></script>
 
 <script>
-    $(".submit-answers").disabled = false;
+   var right_answer = 2;
+    var chosen_answers;
+    var wrong = false;
+    var right = false;
+    var wrong_right = false;
+    var question_number = "3_";
+
+function check_results() {
+    $('.submit-answers').css('display','none');
+    var i = 1;
+    $('.answer-block').each(function(){
+        console.log(i);
+        $("#input" + i).prop('disabled', true);
+        if (i == right_answer) {
+            $('#checkbox' + i).addClass('green');
+        }
+        if($('#input' + i).prop("checked")) {
+            console.log('checked');
+            document.cookie = question_number + i + "=1;"
+            if (i == right_answer) {
+                $('#checkbox' + i).addClass('green');
+                right = true;
+                
+            } else {
+                $('#checkbox' + i).addClass('red');
+                wrong = true;
+            }
+        } else {document.cookie = question_number + i + "=0;"}
+
+        i++;
+    });
+    if(right&wrong) {wrong_right = true}
+    if(!wrong_right) {
+        if(right) {
+            $('#right-answer').css('display','block');
+        } else {$('#wrong-answer').css('display','block');}
+    } else {
+        $('#wrong-right-answer').css('display','block');
+    }
+
+
+    $('.result-block').css('display','block');
+    $("input").prop('disabled', true);
+    console.log(document.cookie);
+}
+
 </script>
 
 </body>

@@ -107,6 +107,8 @@ h3 {
     width: 100%;
     height: auto;
     margin-bottom: 30px; }
+  .content-block .result-block {
+    display: none; }
   .content-block .result-block__img {
     float: left;
     border-right: 2px dotted #AF4845;
@@ -416,6 +418,9 @@ h3 {
   width: 0;
   height: 30px; }
 
+#wrong-answer, #right-answer, #wrong-right-answer {
+  display: none; }
+
 .header-logo {
   position: relative;
   z-index: 2; }
@@ -537,9 +542,6 @@ h3 {
   padding-bottom: 98px;
   padding-left: 15px;
   margin-bottom: 72px; }
-
-.clicked {
-  display: block; }
 
 .banner-header {
   font-family: UbuntuBold;

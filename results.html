@@ -149,13 +149,13 @@
                     <p class = "result-block__question">
                         ВОПРОС 1
                     </p>
-                    <p class = "result-block__percents">
+                    <p class = "result-block__percents" id = "percent1">
                         Верно на 100%</p>
                 </div>
                 <div class = "result-block__right">
                     <div class = "type-of-result">
                     <img src = "img/small_red_dot.png">
-                    <span >Вы ответили правильно: 2</span>
+                    <span id = "answered1">Вы ответили правильно: 2</span>
                     </div>
                     <div class = "right-answer">
                     <img src = "img/small_red_dot.png">
@@ -170,13 +170,13 @@
                     <p class = "result-block__question">
                         ВОПРОС 2
                     </p>
-                    <p class = "result-block__percents">
+                    <p class = "result-block__percents" id = "percent2">
                         Верно на 100%</p>
                 </div>
                 <div class = "result-block__right">
                     <div class = "type-of-result">
                     <img src = "img/small_red_dot.png">
-                    <span >Вы ответили правильно: 1</span>
+                    <span id = "answered2">Вы ответили правильно: 1</span>
                     </div>
                     <div class = "right-answer">
                     <img src = "img/small_red_dot.png">
@@ -191,13 +191,13 @@
                     <p class = "result-block__question">
                         ВОПРОС 3
                     </p>
-                    <p class = "result-block__percents">
+                    <p class = "result-block__percents" id = "percent3">
                         Верно на 100%</p>
                 </div>
                 <div class = "result-block__right">
                     <div class = "type-of-result">
                     <img src = "img/small_red_dot.png">
-                    <span >Вы ответили правильно: 2</span>
+                    <span id = "answered3">Вы ответили правильно: 2</span>
                     </div>
                     <div class = "right-answer">
                     <img src = "img/small_red_dot.png">
@@ -211,13 +211,13 @@
                     <p class = "result-block__question">
                         ВОПРОС 4
                     </p>
-                    <p class = "result-block__percents">
+                    <p class = "result-block__percents" id = "percent4">
                         Верно на 100%</p>
                 </div>
                 <div class = "result-block__right">
                     <div class = "type-of-result">
                     <img src = "img/small_red_dot.png">
-                    <span >Вы ответили правильно: 5</span>
+                    <span id = "answered4">Вы ответили правильно: 5</span>
                     </div>
                     <div class = "right-answer">
                     <img src = "img/small_red_dot.png">
@@ -231,13 +231,13 @@
                     <p class = "result-block__question">
                         ВОПРОС 5
                     </p>
-                    <p class = "result-block__percents">
+                    <p class = "result-block__percents" id = "percent5">
                         Верно на 100%</p>
                 </div>
                 <div class = "result-block__right">
                     <div class = "type-of-result">
                     <img src = "img/small_red_dot.png">
-                    <span >Вы ответили правильно: 1</span>
+                    <span id = "answered5">Вы ответили правильно: 1</span>
                     </div>
                     <div class = "right-answer">
                     <img src = "img/small_red_dot.png">
@@ -251,13 +251,13 @@
                     <p class = "result-block__question">
                         ВОПРОС 6
                     </p>
-                    <p class = "result-block__percents">
+                    <p class = "result-block__percents" id = "percent6">
                         Верно на 100%</p>
                 </div>
                 <div class = "result-block__right">
                     <div class = "type-of-result">
                     <img src = "img/small_red_dot.png">
-                    <span >Вы ответили правильно: 3</span>
+                    <span id = "answered6">Вы ответили правильно: 3</span>
                     </div>
                     <div class = "right-answer">
                     <img src = "img/small_red_dot.png">
@@ -349,6 +349,85 @@
 <script src="js/main.js"></script>
 <script src = "js/libs/jquery.magnific-popup.min.js"></script>
 <script src = "js/result_popups.js"></script>
+
+<script>
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+var answers = {"q1":"2","q2":"1","q3":"2","q4":"5","q5":"1","q6":"3"};
+
+
+for(var i = 1;i<=6;i++) {
+var wrong_answer = false;
+
+var checked_answers = " ";
+
+
+var first_answer = true;
+for(var j = 1;j<=5;j++) {
+
+
+
+if (getCookie(i+"_"+j) == "1") {
+
+    if(j.toString()!=answers["q"+i]) {
+        wrong_answer = true;
+    }
+
+    if(first_answer == false){
+        console.log('not first answer');
+    checked_answers +=", ";
+
+}
+    checked_answers += j;
+    first_answer = false;
+    
+}
+}
+
+
+if (getCookie(i+"_"+answers["q"+i])!="1") {
+    
+    wrong_answer = true;
+}
+
+if(wrong_answer) {
+    $('#answered'+i).html('Вы ответили неправильно:' + checked_answers);
+    $('#percent' + i).html('Верно на 0%');
+}
+
+}
+
+
+
+/*for(i=1;i<=6;i++){
+    console.log(i);
+for(j=1;j<=5;j++){
+    document.cookie = i+"_" +j+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    console.log(j);
+}
+
+
+}*/
+console.log(document.cookie);
+
+
+
+</script>
 
 
 
