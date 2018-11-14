@@ -98,9 +98,9 @@ h3 {
     position: relative;
     z-index: 1; }
   .content-block .next-button-orange {
-    background: #f98631; }
+    background-color: #FF1CF3; }
   .content-block .yellow-bkg-text {
-    background-color: #FFC01F;
+    background-color: #FF1CF3;
     color: white;
     font-family: UbuntuBold; }
   .content-block .medical-tests img {
@@ -294,7 +294,8 @@ h3 {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 0; }
+  z-index: 0;
+  display: none; }
 
 .test-result-block {
   display: flex;

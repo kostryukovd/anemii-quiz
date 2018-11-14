@@ -22,6 +22,8 @@
     src: url("../fonts/ProximaNova-Light.ttf");
 }
 
+$new-violet: #FF1CF3;
+
 *
 {
 	box-sizing:border-box;
@@ -134,12 +136,14 @@ z-index:1;
 }
 
 .next-button-orange {
-	background:#f98631;
+	//background:#f98631;
+	background-color:$new-violet;
 }
 
 
 .yellow-bkg-text {
-background-color:#FFC01F;
+//background-color:#FFC01F;
+background-color:$new-violet;
 color:white;
 font-family:UbuntuBold;
 }
@@ -452,6 +456,7 @@ text-align:center;
 	bottom:0;
 	right:0;
 	z-index:0;
+	display:none;
 }
 
 .test-result-block {

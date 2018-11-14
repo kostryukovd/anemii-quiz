@@ -57,7 +57,7 @@ if(!rating_sent){
 	rate();}
 }
 
-setTimeout(open_star_popup,3000);
+setTimeout(open_star_popup,15000);
 
 
 $('.open-popup-link').magnificPopup({
