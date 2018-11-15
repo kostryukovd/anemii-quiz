@@ -22,11 +22,16 @@
     src: url("../fonts/ProximaNova-Light.ttf");
 }
 
-$new-violet: #FF1CF3;
+//$new-violet: #FF1CF3;
+$new-violet: #AE189B;
 
 *
 {
 	box-sizing:border-box;
+}
+
+a {
+	text-decoration:none;
 }
 
 body 
@@ -144,6 +149,7 @@ z-index:1;
 .yellow-bkg-text {
 //background-color:#FFC01F;
 background-color:$new-violet;
+//background-color:#AE189B;
 color:white;
 font-family:UbuntuBold;
 }
@@ -333,7 +339,7 @@ input {
 
 .checkbox {
 	border: 1px solid #838383;
-border-radius: 3px;
+border-radius: 50%;//3px;
 height:14px;
 min-width:14px;
 margin-right:9px;
@@ -1476,6 +1482,10 @@ padding-bottom:100px;
 		margin:0;
 		font-size:14px;
 	}
+}
+
+#result-button {
+	display:none;
 }
 
 /*.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}

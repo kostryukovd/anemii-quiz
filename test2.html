@@ -147,7 +147,7 @@
             <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input1">
+                    <input type = "checkbox" id = "input1" onclick = "answerClicked(1)">
                     <div class = "checkbox" id = "checkbox1">
                 </div>
                 <p class = "answer-number">1.</p><p class = "answer-text">Да</p>
@@ -157,7 +157,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input2">
+                    <input type = "checkbox" id = "input2" onclick = "answerClicked(2)">
                     <div class = "checkbox" id = "checkbox2">
                 </div>
                 <p class = "answer-number">2.</p><p class = "answer-text">Не обязательно</p>
@@ -167,7 +167,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input3">
+                    <input type = "checkbox" id = "input3" onclick = "answerClicked(3)">
                     <div class = "checkbox" id = "checkbox3">
                 </div>
                 <p class = "answer-number">3.</p><p class = "answer-text">Нет</p>
@@ -177,7 +177,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input4" >
+                    <input type = "checkbox" id = "input4" onclick = "answerClicked(4)">
                     <div class = "checkbox" id = "checkbox4">
                 </div>
                 <p class = "answer-number">4.</p><p class = "answer-text">Да, если уровень гемоглобина ниже 70 г/л</p>
@@ -189,7 +189,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input5">
+                    <input type = "checkbox" id = "input5" onclick = "answerClicked(5)">
                     <div class = "checkbox" id = "checkbox5">
                 </div>
                 <p class = "answer-number">5.</p><p class = "answer-text">Да, если уровень гемоглобина ниже 80 г/л</p>
@@ -245,7 +245,8 @@
 <li>при предоперационном лечении анемии целевой уровень гемоглобина должен составлять ≥ 130 г/л для обоих полов, чтобы минимизировать риск неблагоприятных посттрансфузионных исходов.</li>
 </ul>
                 </div>
-                 <a class = "next-button" href = "test3.html">Далее</a>
+                 <a class = "next-button" href = "test3.html" id = "next-button">Далее</a>
+                 <a class = "next-button" href = "results.html" id = "result-button">Результаты тестирования</a>
                 </div>
 
 
@@ -308,12 +309,26 @@
 
 <script>
 
+var answer_num = 2;
     var right_answer = 1;
     var chosen_answers;
     var wrong = false;
     var right = false;
     var wrong_right = false;
     var question_number = "2_";
+
+
+for(i=1;i<=5;i++) {
+    if(getCookie(answer_num + '_' +i)=="1")
+    {
+        $('#input'+i).prop('checked',true);
+        check_results();
+        $('#result-button').css('display','inline-block');
+        $('#next-button').css('display','none');
+    }
+}
+
+
 
 function check_results() {
     $('.submit-answers').css('display','none');
@@ -351,6 +366,14 @@ function check_results() {
 
     $('.result-block').css('display','block');
     $("input").prop('disabled', true);
+            if(right) {
+        $([document.documentElement, document.body]).animate({
+        scrollTop: $("#right-answer").offset().top
+    }, 2000);}
+        if(wrong) {
+                $([document.documentElement, document.body]).animate({
+        scrollTop: $("#wrong-answer").offset().top
+    }, 2000);}
     console.log(document.cookie);
 }
 

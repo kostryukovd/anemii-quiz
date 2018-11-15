@@ -17,6 +17,9 @@
 * {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+
 body {
   background-color: #F9F9F9;
   font-family: Ubuntu; }
@@ -98,9 +101,9 @@ h3 {
     position: relative;
     z-index: 1; }
   .content-block .next-button-orange {
-    background-color: #FF1CF3; }
+    background-color: #AE189B; }
   .content-block .yellow-bkg-text {
-    background-color: #FF1CF3;
+    background-color: #AE189B;
     color: white;
     font-family: UbuntuBold; }
   .content-block .medical-tests img {
@@ -209,7 +212,7 @@ h3 {
 
 .answer-block .checkbox {
   border: 1px solid #838383;
-  border-radius: 3px;
+  border-radius: 50%;
   height: 14px;
   min-width: 14px;
   margin-right: 9px;
@@ -951,6 +954,9 @@ h3 {
   .test-table p {
     margin: 0;
     font-size: 14px; }
+
+#result-button {
+  display: none; }
 
 /*.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:0px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}

@@ -147,7 +147,7 @@
             <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input1">
+                    <input type = "checkbox" id = "input1" onclick = "answerClicked(1)">
                     <div class = "checkbox" id = "checkbox1">
                 </div>
                 <p class = "answer-number">1.</p><p class = "answer-text">Глюконат железа (700–1000 мг)</p>
@@ -157,7 +157,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input2">
+                    <input type = "checkbox" id = "input2" onclick = "answerClicked(2)">
                     <div class = "checkbox" id = "checkbox2">
                 </div>
                 <p class = "answer-number">2.</p><p class = "answer-text">Сахарат железа (700–1000 мг)</p>
@@ -167,7 +167,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input3">
+                    <input type = "checkbox" id = "input3" onclick = "answerClicked(3)">
                     <div class = "checkbox" id = "checkbox3">
                 </div>
                 <p class = "answer-number">3.</p><p class = "answer-text">Карбоксимальтозат железа (700–1000 мг)</p>
@@ -177,7 +177,7 @@
                        <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input4">
+                    <input type = "checkbox" id = "input4" onclick = "answerClicked(4)">
                     <div class = "checkbox" id = "checkbox4">
                 </div>
                 <p class = "answer-number">4.</p><p class = "answer-text">Сульфат железа (700–1000 мг)</p>
@@ -188,7 +188,7 @@
                                    <div class = "answer-block">
 
                 <label>
-                    <input type = "checkbox" id = "input5" >
+                    <input type = "checkbox" id = "input5" onclick = "answerClicked(5)">
                     <div class = "checkbox" id = "checkbox5">
                 </div>
                 <p class = "answer-number">5.</p><p class = "answer-text">Изомальтозат железа (700–1000мг)</p>
@@ -292,7 +292,8 @@
 
 
                 </div>
-                 <a class = "next-button" href = "results.html">Узнать результаты</a>
+                 <a class = "next-button" href = "results.html" id = "next-button">Узнать результаты</a>
+                 <a class = "next-button" href = "results.html" id = "result-button">Результаты тестирования</a>
                 </div>
 
 
@@ -355,12 +356,27 @@
 <script src = "js/libs/jquery.magnific-popup.min.js"></script>
 
 <script>
+
+var answer_num = 6;
     var right_answer = 3;
     var chosen_answers;
     var wrong = false;
     var right = false;
     var wrong_right = false;
     var question_number = "6_";
+
+
+for(i=1;i<=5;i++) {
+    if(getCookie(answer_num + '_' +i)=="1")
+    {
+        $('#input'+i).prop('checked',true);
+        check_results();
+        $('#result-button').css('display','inline-block');
+        $('#next-button').css('display','none');
+    }
+}
+
+
 
 function check_results() {
     $('.submit-answers').css('display','none');
@@ -398,6 +414,14 @@ function check_results() {
 
     $('.result-block').css('display','block');
     $("input").prop('disabled', true);
+            if(right) {
+        $([document.documentElement, document.body]).animate({
+        scrollTop: $("#right-answer").offset().top
+    }, 2000);}
+        if(wrong) {
+                $([document.documentElement, document.body]).animate({
+        scrollTop: $("#wrong-answer").offset().top
+    }, 2000);}
     console.log(document.cookie);
 }
 
